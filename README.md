@@ -1,33 +1,28 @@
-﻿# [STM32F303](https://github.com/mcuyun/STM32F303) 
+﻿# [STM32F303](https://github.com/sochub/STM32F303) 
+[![sites](SoC/qitas.png)](http://www.qitas.cn) 
+####  qitas@qitas.cn
+#### 父级：[STM32F3](https://github.com/sochub/STM32F3)
+#### 归属：[Cortex-M4](https://github.com/sochub/CM4) 
+### [芯片简介](https://github.com/sochub/STM32F303/wiki)
 
-STM32F303高性能通用处理器
+STM32 F3系列与STM32 F1系列引脚兼容，扩大了STM32 Cortex-M4系列产品的阵容，现在ST Cortex-M4家族可提供低成本F3系列的和高性能的F4系列。
 
-[![sites](mcuyun/mcuyun.png)](http://www.mcuyun.com)
+STM32 F3系列包括带有64~256KB片上Flash存储器和48KB SRAM的器件，提供的封装选项包括WLCSP66（小于4.3 x 4.3 mm）、LQFP48、LQFP64、LQFP100和UFBGA100。
 
-#### 更多MCU：[mcuyun](https://github.com/mcuyun/whyme)可访问 www.mcuyun.com
 
----
+### [资源组成](https://github.com/sochub/STM32F303)
 
-# 简介
+* [参考文档](docs/)
+* [参考资源](src/)
+* [模板工程](demo/)
+* [编译工具](https://github.com/sochub/arm-none-eabi)
 
----
+### [替换方案](https://github.com/sochub/STM32F303)
 
-## 组成
+* 向下替换方案 [STM32F103](https://github.com/sochub/STM32F103) 
+* 向上替换方案 [STM32F407](https://github.com/sochub/STM32F407) 
 
-#### makefile
-
-基于makefile工程
-
-#### keil
-
-基于keil工程
-
----
-
-为锻造最美之器
-
-###  www.mcuyun.com   |    qitas@qitas.cn
-
+##  [SoC资源平台](http://www.qitas.cn)
 
 
 
