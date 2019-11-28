@@ -1,5 +1,4 @@
 TARGET=main
-all: burn
 
 PREFIX=arm-none-eabi
 
@@ -37,6 +36,8 @@ SRC = main.c \
 	STM32F30x_StdPeriph_Driver/src/stm32f30x_rcc.c \
 	STM32F30x_StdPeriph_Driver/src/stm32f30x_gpio.c
 
+
+all: burn
 
 burn : $(TARGET).bin
 	openocd -f flash.cfg #-d3
