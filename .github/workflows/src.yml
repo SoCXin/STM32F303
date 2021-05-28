@@ -7,48 +7,48 @@ on:
       - '**.yml'
 
 jobs:
-  demo:
-    strategy:
-      fail-fast: false
-      matrix:
-        example:
-          - "spl"
-        os: [ubuntu-latest, windows-latest, macos-latest]
-    runs-on: ${{ matrix.os }}
-    steps:
-      - name: make-action
-        uses: Qful/make-action@master
-        with:
-          release: 10-2020-q4
+  # demo:
+  #   strategy:
+  #     fail-fast: false
+  #     matrix:
+  #       example:
+  #         - "spl"
+  #       os: [ubuntu-latest, windows-latest, macos-latest]
+  #   runs-on: ${{ matrix.os }}
+  #   steps:
+  #     - name: make-action
+  #       uses: Qful/make-action@master
+  #       with:
+  #         release: 10-2020-q4
 
-      - uses: actions/checkout@v2
-        with:
-          submodules: "recursive"
-          fetch-depth: 1
+  #     - uses: actions/checkout@v2
+  #       with:
+  #         submodules: "recursive"
+  #         fetch-depth: 1
 
-      - name: build
-        if: matrix.os == 'ubuntu-latest'
-        working-directory: src/demo
-        run: |
-          make -C ${{ matrix.example }}
+  #     - name: build
+  #       if: matrix.os == 'ubuntu-latest'
+  #       working-directory: src/demo
+  #       run: |
+  #         make -C ${{ matrix.example }}
 
-      - name: build
-        if: matrix.os == 'windows-latest'
-        working-directory: src/demo
-        run: |
-          make -C ${{ matrix.example }} SHELL=cmd
+  #     - name: build
+  #       if: matrix.os == 'windows-latest'
+  #       working-directory: src/demo
+  #       run: |
+  #         make -C ${{ matrix.example }} SHELL=cmd
 
-      - name: build
-        if: matrix.os == 'macos-latest'
-        working-directory: src/demo
-        run: |
-          brew install make
-          gmake -C ${{ matrix.example }}
+  #     - name: build
+  #       if: matrix.os == 'macos-latest'
+  #       working-directory: src/demo
+  #       run: |
+  #         brew install make
+  #         gmake -C ${{ matrix.example }}
 
-      - uses: actions/upload-artifact@v2
-        with:
-          name: demo_${{ matrix.example }}_${{ matrix.os }}
-          path: src/demo/build
+  #     - uses: actions/upload-artifact@v2
+  #       with:
+  #         name: demo_${{ matrix.example }}_${{ matrix.os }}
+  #         path: src/demo/build
 
   # build:
   #   strategy:
@@ -133,12 +133,14 @@ jobs:
           release: 10-2020-q4
 
       - name: cmake-action
-        uses: Qful/cmake-action@master
+        uses: lpenz/ghaction-cmake@master
         with:
-          source-dir: src/template/${{ matrix.example }}
+          cc: arm-none-eabi-gcc
 
-      # - name: build template
-      #   working-directory: src/template
-      #   if: matrix.os == 'ubuntu-latest'
-      #   run: |
-      #     make -C ${{ matrix.example }}
+      - name: build template
+        working-directory: src/template/${{ matrix.example }}
+        if: matrix.os == 'ubuntu-latest'
+        run: |
+          mkdir build && cd build
+          cmake .. && make
+
