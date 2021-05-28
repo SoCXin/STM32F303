@@ -12,7 +12,6 @@ jobs:
       fail-fast: false
       matrix:
         example:
-          - "freertos"
           - "spl"
         os: [ubuntu-latest, windows-latest, macos-latest]
     runs-on: ${{ matrix.os }}
@@ -51,14 +50,77 @@ jobs:
           name: demo_${{ matrix.example }}_${{ matrix.os }}
           path: src/demo/build
 
-  build:
+  # build:
+  #   strategy:
+  #     fail-fast: false
+  #     matrix:
+  #       example:
+  #         - "1_blink"
+  #         # - "2_blinkInt"
+  #         # - "3_encoder"
+  #         # - "4_motorFindZero"
+  #         # - "5_SVPWM"
+  #         # - "6_ADC"
+  #         # - "7_currentReader"
+  #         # - "8_clarke"
+  #         # - "9_openLoopFOC"
+  #       example:
+  #         - "Qful/cmake-action"
+  #         - "lukka/run-cmake"
+  #         - "lpenz/ghaction-cmake"
+  #       os: [ubuntu-latest, windows-latest, macos-latest]
+  #   runs-on: ${{ matrix.os }}
+  #   steps:
+  #     - uses: actions/checkout@v2
+  #       with:
+  #         submodules: "recursive"
+  #         fetch-depth: 1
+
+  #     - name: make-action
+  #       uses: Qful/make-action@master
+  #       with:
+  #         release: 10-2020-q4
+
+  #     - name: build template
+  #       working-directory: src/template
+  #       if: matrix.os == 'ubuntu-latest'
+  #       run: |
+  #         make -C ${{ matrix.example }}
+
+  #     - name: build template
+  #       working-directory: src/template
+  #       if: matrix.os == 'windows-latest'
+  #       run: |
+  #         make -C ${{ matrix.example }} SHELL=cmd
+
+  #     - name: build template
+  #       working-directory: src/template
+  #       if: matrix.os == 'macos-latest'
+  #       run: |
+  #         brew install make
+  #         make -C ${{ matrix.example }}
+
+      # - name: upload template
+      #   uses: actions/upload-artifact@v2
+      #   with:
+      #     name: template_${{ matrix.example }}_${{ matrix.os }}
+      #     path: src/template/${{ matrix.example }}/build
+
+  test:
     strategy:
       fail-fast: false
       matrix:
         example:
-          - "blink"
-        os: [ubuntu-latest,  macos-latest] # windows-latest,
-    runs-on: ${{ matrix.os }}
+          - "1_blink"
+          # - "2_blinkInt"
+          # - "3_encoder"
+          # - "4_motorFindZero"
+          # - "5_SVPWM"
+          # - "6_ADC"
+          # - "7_currentReader"
+          # - "8_clarke"
+          # - "9_openLoopFOC"
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
         with:
@@ -70,27 +132,13 @@ jobs:
         with:
           release: 10-2020-q4
 
-      - name: build template
-        working-directory: src/template
-        if: matrix.os == 'ubuntu-latest'
-        run: |
-          make -C ${{ matrix.example }}
-
-      - name: build template
-        working-directory: src/template
-        if: matrix.os == 'windows-latest'
-        run: |
-          make -C ${{ matrix.example }} SHELL=cmd
-
-      - name: build template
-        working-directory: src/template
-        if: matrix.os == 'macos-latest'
-        run: |
-          brew install make
-          make -C ${{ matrix.example }}
-
-      - name: upload template
-        uses: actions/upload-artifact@v2
+      - name: cmake-action
+        uses: Qful/cmake-action@master
         with:
-          name: template_${{ matrix.example }}_${{ matrix.os }}
-          path: src/template/${{ matrix.example }}/build
+          source-dir: src/template/${{ matrix.example }}
+
+      # - name: build template
+      #   working-directory: src/template
+      #   if: matrix.os == 'ubuntu-latest'
+      #   run: |
+      #     make -C ${{ matrix.example }}
