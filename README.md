@@ -1,49 +1,40 @@
-﻿# [STM32F303](https://github.com/sochub/STM32F303) 
+﻿# [STM32F303](https://github.com/SoCXin/STM32F303)
 
-[![sites](http://182.61.61.133/link/resources/SoC.png)](http://www.qitas.cn) 
+[![sites](http://182.61.61.133/link/resources/SoC.png)](http://www.SoC.Xin)
 
-#### [Vendor](https://github.com/sochub/Vendor)：[ST](https://github.com/sochub/ST)
-#### [ARM](https://github.com/sochub/ARM)：[cortex M4](https://github.com/sochub/CM4) 
-#### [Level](https://github.com/sochub/Level)： 90 DMIPS /  72 MHz
+[![Build Status](https://github.com/SoCXin/STM32F303/workflows/src/badge.svg)](https://github.com/SoCXin/STM32F303/actions/workflows/src.yml)
 
-### [芯片简介](https://github.com/sochub/STM32F303/wiki)
+* [ST](https://www.st.com/zh/): [Cortex-M3](https://github.com/SoCXin/Cortex)
+* [L3R4](https://github.com/SoCXin/Level): 72 MHz x 1.25 DMIPS/MHz (177CoreMark)
 
-STM32 F3系列与STM32 F1系列引脚兼容，扩大了STM32 Cortex-M4系列产品的阵容，现在ST Cortex-M4家族可提供低成本F3系列的和高性能的F4系列。
+## [简介](https://github.com/SoCXin/STM32F303/wiki)
 
-ARM® Cortex®-M4 core (with FPU and DSP instructions) running at 72 MHz.
+[STM32F303](https://github.com/SoCXin/STM32F303) 具有高达1MB的Flash、电机控制、USB和CAN
 
-[![sites](docs/STM32F303.jpg)](https://www.st.com/content/st_com/zh/products/microcontrollers-microprocessors/stm32-32-bit-arm-cortex-mcus/stm32-mainstream-mcus/stm32f3-series/stm32f303.html) 
+[![sites](docs/STM32F303.png)](https://www.st.com/zh/microcontrollers-microprocessors/STM32F303cb.html)
 
+### 关键特性
 
-关键参数：
+* 最多 9 个通信接口 (2xI2C,3xUSART,2xSPI,CAN2.0B,USB2.0)
 
-* Up to 7x fast- and ultra-fast comparators (25 ns)
-* Up to 4x Op-Amp with programmable gain
-* Up to 2x 12-bit DACs
-* Up to 4x ultra-fast 12-bit ADCs with 5 MSPS
-* Up to 3x fast 144 megahertz motor control timers (resolution < 7 ns)
-* Full-speed USB and CAN 2.0B communication interfaces
-* flash  from 32 to 512 Kbytes 
+#### 封装规格
 
-封装规格：WLCSP49、LQFP32、LQFP48、LQFP64、LQFP100、LQFP144。
+* LQFP48 (7×7mm)
+* LQFP64 (10×10mm)
+* LQFP100 (14×14mm)
+* LQFP144 (20×20mm)
 
-### [资源收录](https://github.com/sochub/STM32F303)
+### [资源收录](https://github.com/SoCXin)
 
-* [参考文档](docs/)
 * [参考资源](src/)
-* [模板工程](demo/)
+* [参考文档](docs/)
+* [参考工程](project/)
 
-### [开发工具](https://github.com/sochub)
+### [选型建议](https://github.com/SoCXin)
 
-* [编译工具](https://github.com/sochub/arm-none-eabi)
-* [platform H1](https://github.com/OS-Q/H1)
+[STM32F303](https://github.com/SoCXin/STM32F303) 该系列的规格型号也是最全的，按封装和存储容量有29个规格配置,兼容系列包括：
 
-### [选型建议](https://github.com/sochub)
+* STM32F303，具有高达1MB的Flash、电机控制、USB和CAN
+* STM32F105/107，具有以太网MAC、CAN和USB 2.0 OTG
 
-[STM32F303](https://github.com/sochub/STM32F303) 是F30系列中的顶配，主要的特点在电机控制类外设数量多，功能全。
-
-同系列替换方案 [STM32F301](https://github.com/sochub/STM32F301) 和 [STM32F373](https://github.com/sochub/STM32F373) 
-
-###  [SoC资源平台](http://www.qitas.cn)   
-
-
+### [探索芯世界 www.SoC.xin](http://www.SoC.Xin)

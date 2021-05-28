@@ -1,0 +1,49 @@
+name: src
+
+on:
+  push:
+    paths:
+      - 'src/**'
+      - '**.yml'
+
+jobs:
+  demo:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: make-action
+        uses: Qful/make-action@master
+        with:
+          release: 10-2020-q4
+
+      - uses: actions/checkout@v2
+        with:
+          submodules: "recursive"
+          fetch-depth: 1
+
+      - name: build
+        if: matrix.os == 'ubuntu-latest'
+        working-directory: src/demo
+        run: |
+          make all
+
+      - name: build
+        if: matrix.os == 'windows-latest'
+        working-directory: src/demo
+        run: |
+          make all SHELL=cmd
+
+      - name: build
+        if: matrix.os == 'macos-latest'
+        working-directory: src/demo
+        run: |
+          brew install make
+          gmake all
+
+      - uses: actions/upload-artifact@v2
+        with:
+          name: demo_${{ matrix.os }}
+          path: src/demo/build
