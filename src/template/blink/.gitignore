@@ -1,9 +1,0 @@
-*.o
-prog
-led
-dma
-blink
-*.bin
-interrupt
-disp
-build/

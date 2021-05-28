@@ -69,6 +69,7 @@ jobs:
         uses: Qful/make-action@master
         with:
           release: 10-2020-q4
+
       - name: build template
         working-directory: src/template
         if: matrix.os == 'ubuntu-latest'
