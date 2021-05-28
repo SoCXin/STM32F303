@@ -132,13 +132,16 @@ jobs:
         with:
           release: 10-2020-q4
 
+      - uses: docker://lpenz/omnilint:latest
+
       - name: cmake-action
         uses: lpenz/ghaction-cmake@main
+        with:
+          working-directory: src/template/${{ matrix.example }}
 
-      - name: build template
-        working-directory: src/template/${{ matrix.example }}
-        if: matrix.os == 'ubuntu-latest'
-        run: |
-          mkdir build && cd build
-          cmake .. && make
+      # - name: build template
+      #   working-directory: src/template/${{ matrix.example }}
+      #   run: |
+      #     mkdir build && cd build
+      #     cmake .. && make
 

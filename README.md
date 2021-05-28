@@ -4,12 +4,12 @@
 
 [![Build Status](https://github.com/SoCXin/STM32F303/workflows/src/badge.svg)](https://github.com/SoCXin/STM32F303/actions/workflows/src.yml)
 
-* [ST](https://www.st.com/zh/): [Cortex-M3](https://github.com/SoCXin/Cortex)
+* [ST](https://www.st.com/zh/): [Cortex-M4](https://github.com/SoCXin/Cortex)
 * [L3R4](https://github.com/SoCXin/Level): 72 MHz x 1.25 DMIPS/MHz (177CoreMark)
 
 ## [简介](https://github.com/SoCXin/STM32F303/wiki)
 
-[STM32F303](https://github.com/SoCXin/STM32F303) 是STM32F30x系列中集成最多功能的器件
+[STM32F303](https://github.com/SoCXin/STM32F303) 是STM32F30x系列中集成最多功能的器件，最多7个快速和超快速比较器（25 ns）
 
 [![sites](docs/STM32F303.png)](https://www.st.com/zh/microcontrollers-microprocessors/STM32F303cb.html)
 
@@ -17,6 +17,8 @@
 
 * 4xPGA (2.4-3.6V)
 * 3x144MHz 电机控制定时器
+* 12bit ADC(5MSPS,mix 18MSPS)
+* USB + CAN 2.0B
 
 #### 封装规格
 
@@ -25,6 +27,9 @@
 * LQFP64 (10×10mm)
 * LQFP100 (14×14mm)
 * LQFP144 (20×20mm)
+* CSP/UFBGA100
+* WLCSP49
+
 
 ### [资源收录](https://github.com/SoCXin)
 

@@ -2,9 +2,9 @@
     "type":"MCU",
     "name":"STM32F303",
     "title": "ST STM32F303 MCU",
-    "description":"ST Cortex-M3 MCU",
+    "description":"ST Cortex-M4 MCU",
     "Core": {
-        "type":"Cortex-M3",
+        "type":"Cortex-M4",
         "Freq":550,
         "DMIPS": 1177,
         "CoreMark": 2778

@@ -16,7 +16,7 @@ BIN=$(CP) -O ihex
 DEFS =  -DSTM32F30X  -DHSE_VALUE=25000000
 STARTUP = lib/startup_stm32f30x.s
 
-MCU = cortex-m3
+MCU = cortex-m4
 MCFLAGS = -mcpu=$(MCU) -mthumb -mlittle-endian -mthumb-interwork
 
 STM32_INCLUDES = -Ilib -I. -ISTM32F30x_StdPeriph_Driver/inc
