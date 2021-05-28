@@ -41,8 +41,8 @@ LICENSE*
 *cm0*
 *.uvgu*
 .gitmodules
-*.png
-*.jpg
+# *.png
+# *.jpg
 *.rst
 .travis.yml
 doc

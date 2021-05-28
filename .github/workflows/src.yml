@@ -133,9 +133,7 @@ jobs:
           release: 10-2020-q4
 
       - name: cmake-action
-        uses: lpenz/ghaction-cmake@master
-        with:
-          cc: arm-none-eabi-gcc
+        uses: lpenz/ghaction-cmake@main
 
       - name: build template
         working-directory: src/template/${{ matrix.example }}

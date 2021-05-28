@@ -9,16 +9,18 @@
 
 ## [简介](https://github.com/SoCXin/STM32F303/wiki)
 
-[STM32F303](https://github.com/SoCXin/STM32F303) 具有高达1MB的Flash、电机控制、USB和CAN
+[STM32F303](https://github.com/SoCXin/STM32F303) 是STM32F30x系列中集成最多功能的器件
 
 [![sites](docs/STM32F303.png)](https://www.st.com/zh/microcontrollers-microprocessors/STM32F303cb.html)
 
 ### 关键特性
 
-* 最多 9 个通信接口 (2xI2C,3xUSART,2xSPI,CAN2.0B,USB2.0)
+* 4xPGA (2.4-3.6V)
+* 3x144MHz 电机控制定时器
 
 #### 封装规格
 
+* LQFP32 (7×7mm)
 * LQFP48 (7×7mm)
 * LQFP64 (10×10mm)
 * LQFP100 (14×14mm)
