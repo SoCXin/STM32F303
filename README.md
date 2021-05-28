@@ -9,7 +9,7 @@
 
 ## [简介](https://github.com/SoCXin/STM32F303/wiki)
 
-[STM32F303](https://github.com/SoCXin/STM32F303) 是STM32F30x系列中集成最多功能的器件，最多7个快速和超快速比较器（25 ns）
+[STM32F303](https://github.com/SoCXin/STM32F303) 与STM32F0系列高度兼容,具有更高性能和更多模拟功能并可管理高达三个FOC电机控制的产品。
 
 [![sites](docs/STM32F303.png)](https://www.st.com/zh/microcontrollers-microprocessors/STM32F303cb.html)
 
@@ -39,7 +39,7 @@
 
 ### [选型建议](https://github.com/SoCXin)
 
-[STM32F303](https://github.com/SoCXin/STM32F303) 该系列的规格型号也是最全的，按封装和存储容量有29个规格配置,兼容系列包括：
+[STM32F303](https://github.com/SoCXin/STM32F303) 是STM32F30x系列中集成最多功能的器件，最多7个快速和超快速比较器(25 ns)
 
 * STM32F301、STM32F302、STM32F303通用产品线范围包括了基本型产品、包含高性价比外设组合的产品，以及具有更高性能和更多模拟功能并可管理高达三个FOC电机控制的产品。
 * STM32F334具有高分辨率定时器（217 ps）和用于数字电源转换的复杂波形生成器和事件处理器（HRTIM），适用于数字开关模式电源、照明、焊接、太阳能和无线充电等应用。

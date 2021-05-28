@@ -9,6 +9,7 @@ Debug
 *.DS_Store
 *.autosave
 *~
+*#
 Change*
 CHANGE*
 README*
@@ -25,12 +26,18 @@ LICENSE*
 *.map
 *.hex
 *.bin
-*.bak
-# *.txt
+*bak
+*.txt
 *.lst
 *.sct
 *.elf
 *.ini
+*.gbr
+*.drl
+*.ods
+*.csv
+*.xml
+*.pdf
 *_sc*
 *cm23*
 *cm33*
@@ -41,8 +48,8 @@ LICENSE*
 *cm0*
 *.uvgu*
 .gitmodules
-# *.png
-# *.jpg
+*.png
+*.jpg
 *.rst
 .travis.yml
 doc
