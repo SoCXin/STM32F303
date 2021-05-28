@@ -1,4 +1,4 @@
-TARGET=main
+TARGET=demo
 
 PREFIX=arm-none-eabi
 
@@ -11,7 +11,7 @@ OD=$(PREFIX)-objdump
 
 OBJCOPYFLAGS = -O binary
 
-BIN=$(CP) -O ihex 
+BIN=$(CP) -O ihex
 
 DEFS =  -DSTM32F30X  -DHSE_VALUE=25000000
 STARTUP = lib/startup_stm32f30x.s
@@ -27,7 +27,7 @@ OPTIMIZE       = -Os
 CFLAGS	= $(MCFLAGS)  $(OPTIMIZE)  $(DEFS) -I. -I./ $(STM32_INCLUDES)  -Wl,-T,lib/stm32f303.ld
 CFLAGS+=-DDEBUG
 
-AFLAGS	= $(MCFLAGS) 
+AFLAGS	= $(MCFLAGS)
 
 SRC = main.c \
 	stm32f30x_it.c \
@@ -37,7 +37,9 @@ SRC = main.c \
 	STM32F30x_StdPeriph_Driver/src/stm32f30x_gpio.c
 
 
-all: burn
+all: Build
+
+Build: $(TARGET).hex $(TARGET).bin
 
 burn : $(TARGET).bin
 	openocd -f flash.cfg #-d3
