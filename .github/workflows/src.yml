@@ -142,7 +142,8 @@ jobs:
       - name: build demo
         working-directory: src/demo/${{ matrix.example }}
         run: |
+          sudo apt update -y
           sudo apt install -y cmake
           mkdir build && cd build
-          cmake .. && make
-
+          cmake -D CMAKE_TOOLCHAIN_FILE=../../sys/cmake/arm-none-eabi.cmake -DCMAKE_BUILD_TYPE=Debug ..
+          make
