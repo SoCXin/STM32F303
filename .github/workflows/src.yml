@@ -11,6 +11,9 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
+        example:
+          - "freertos"
+          - "spl"
         os: [ubuntu-latest, windows-latest, macos-latest]
     runs-on: ${{ matrix.os }}
     steps:
@@ -28,30 +31,32 @@ jobs:
         if: matrix.os == 'ubuntu-latest'
         working-directory: src/demo
         run: |
-          make all
+          make -C ${{ matrix.example }}
 
       - name: build
         if: matrix.os == 'windows-latest'
         working-directory: src/demo
         run: |
-          make all SHELL=cmd
+          make -C ${{ matrix.example }} SHELL=cmd
 
       - name: build
         if: matrix.os == 'macos-latest'
         working-directory: src/demo
         run: |
           brew install make
-          gmake all
+          gmake -C ${{ matrix.example }}
 
       - uses: actions/upload-artifact@v2
         with:
-          name: demo_${{ matrix.os }}
+          name: demo_${{ matrix.example }}_${{ matrix.os }}
           path: src/demo/build
 
   build:
     strategy:
       fail-fast: false
       matrix:
+        example:
+          - "blink"
         os: [ubuntu-latest,  macos-latest] # windows-latest,
     runs-on: ${{ matrix.os }}
     steps:
@@ -68,23 +73,23 @@ jobs:
         working-directory: src/template
         if: matrix.os == 'ubuntu-latest'
         run: |
-          make -C blink
+          make -C ${{ matrix.example }}
 
       - name: build template
         working-directory: src/template
         if: matrix.os == 'windows-latest'
         run: |
-          make -C blink SHELL=cmd
+          make -C ${{ matrix.example }} SHELL=cmd
 
       - name: build template
         working-directory: src/template
         if: matrix.os == 'macos-latest'
         run: |
           brew install make
-          make -C blink
+          make -C ${{ matrix.example }}
 
       - name: upload template
         uses: actions/upload-artifact@v2
         with:
-          name: template_${{ matrix.os }}
-          path: src/template/blink/bin
+          name: template_${{ matrix.example }}_${{ matrix.os }}
+          path: src/template/${{ matrix.example }}/build
